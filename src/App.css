@@ -1,38 +1,74 @@
-.App {
-  text-align: center;
+body {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #236ba6, #23a5a6);
+  height: 100vh;
+  animation: gradientAnim 12s ease infinite;
+  background-size: 400% 400%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes gradientAnim {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+main {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+aside {
+  background-image: linear-gradient(45deg, #7ccdf3, #1472bf);
+  width: 18.75rem;
+  height: 100vh;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container {
+  margin: 8.5rem 2rem;
+}
+
+.container a {
+  color: #f9fafb;
+  text-decoration: none;
+  font-size: 1.75rem;
+  font-weight: 100;
+  margin: 20px;
+  font-family: system-ui;
+  display: block;
+}
+
+.toggleButton {
+  position: fixed;
+  cursor: pointer;
+  margin: 1.25 rem;
+  border: none;
+  padding: 0.5rem 1rem;
+  background-color: #f9fafb;
+}
+
+.dragCard .drag-area {
+  opacity: 0.2;
+  background: #fff;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: calc(50% - 150px);
+  left: calc(50% - 150px);
+  border-radius: 30px;
+}
+
+.dragCard div {
+  background: #fff;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: calc(50% - 150px / 2);
+  left: calc(50% - 150px / 2);
+  border-radius: 30px;
+  cursor: pointer;
 }
